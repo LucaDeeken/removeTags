@@ -20,9 +20,7 @@
     const wholeHtmlCodeWithoutScript = wholeHtmlCodeWithScript.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
     const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
     const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
-    console.log(wholeHtmlCodeWithoutScript);
-
-    console.log(getPlainText);
+    return getPlainText;
 
     };
         
