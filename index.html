@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    
+<script defer>
+const wholeHtmlCode = document.body.outerHTML;
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+const getPlainText = stripHTMLTags(wholeHtmlCode);
+    
+console.log(getPlainText);
+
+</script>
 </head>
 <body>
     <div>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</div>
@@ -12,16 +22,6 @@
 <div>Test123</div>
 <div>Noch einer</div>
 
-
-
-<script>
-const wholeHtmlCode = document.body.outerHTML;
-const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-const getPlainText = stripHTMLTags(wholeHtmlCode);
-    
-console.log(getPlainText);
-
-</script>
 
 </body>
 </html>
