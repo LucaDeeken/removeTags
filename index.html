@@ -29,7 +29,7 @@
         const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
         const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
         return getPlainTextBox;
-    }:
+    };
 
     const getPlainTextBox = removeTagsFromBox();
     console.log(getPlainTextBox);
