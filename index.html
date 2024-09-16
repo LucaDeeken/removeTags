@@ -14,12 +14,15 @@
 
 <script defer>
 
-    <!-- select DOM-Tree without head, after that removing script -->
+    function removeTags() {
+    
     let wholeHtmlCodeWithScript = document.body.outerHTML;
-    const wholeHtmlCodeWithoutScript = bodyHtmlCode.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
-    <!-- removing HTML-Tags -->
+    const wholeHtmlCodeWithoutScript = wholeHtmlCodeWithScript.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
     const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
     const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);    
+    };
+        
+    removeTags();
     console.log(getPlainText);
         
 </script>
