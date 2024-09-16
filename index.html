@@ -16,8 +16,10 @@
 
 <script>
 const wholeHtmlCode = document.documentElement.outerHTML;
-
-console.log(wholeHtmlCode);
+const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+const getPlainText = stripHTMLTags("wholeHtmlCode")
+    
+console.log(getPlainText);
 
 </script>
 
