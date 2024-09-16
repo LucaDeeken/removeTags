@@ -17,7 +17,7 @@
 <script>
 const wholeHtmlCode = document.documentElement.outerHTML;
 const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-const getPlainText = stripHTMLTags(wholeHtmlCode)
+const getPlainText = stripHTMLTags(wholeHtmlCode);
     
 console.log(getPlainText);
 
