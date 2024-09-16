@@ -27,7 +27,7 @@
     function removeTagsFromBox(text) {
         const wholeHtmlCodeWithoutScript = text.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
         const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-        const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
+        const getPlainTextBox = stripHTMLTags(wholeHtmlCodeWithoutScript);
         return getPlainTextBox;
     };
 
