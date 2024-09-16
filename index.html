@@ -21,11 +21,18 @@
     const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
     const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
     return getPlainText;
-
     };
-
     const plainText = removeTags();
-    console.log(plainText);
+
+    function removeTagsFromBox(text) {
+        const wholeHtmlCodeWithoutScript = text.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
+        const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
+        const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
+        return getPlainTextBox;
+    }:
+
+    const getPlainTextBox = removeTagsFromBox();
+    console.log(getPlainTextBox);
         
 </script>
 
