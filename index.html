@@ -11,23 +11,20 @@
 <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
 <div>Test123</div>
 <div>Noch einer</div>
+<style>
 
-<script defer>
-
-    function removeTags() {
+    .box {
+        color: blue;
+    }
     
-    let wholeHtmlCodeWithScript = document.body.outerHTML;
-    const wholeHtmlCodeWithoutScript = wholeHtmlCodeWithScript.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
-    const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-    const getPlainText = stripHTMLTags(wholeHtmlCodeWithoutScript);
-    return getPlainText;
-    };
-    const plainText = removeTags();
-
+</style>
+<script>
+    
     function removeTagsFromBox(text) {
         const wholeHtmlCodeWithoutScript = text.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
+        const wholeHtmlCodeWithoutStyleAndScript = wholeHtmlCodeWithoutScript.replace(/<style[^>]*>([\\s\\S]*?)<\\/style>/gi, '');
         const stripHTMLTags = str => str.replace(/<[^>]*>/g, '');
-        const getPlainTextBox = stripHTMLTags(wholeHtmlCodeWithoutScript);
+        const getPlainTextBox = stripHTMLTags(wholeHtmlCodeWithoutStyleAndScript);
         return getPlainTextBox;
     };
 
