@@ -26,8 +26,19 @@ function removeTagsFromBox(text) {
     const stripHTMLTags = str => str.replace(/<\/?[^>]+(>|$)/g, '');
     const getPlainTextBox = stripHTMLTags(wholeHtmlCodeWithoutStyleAndScript);
     return getPlainTextBox;
-}
+};
 
+function removeTags() {
+    let wholeHtmlCodeWithScript = document.body.outerHTML;
+    const wholeHtmlCodeWithoutScript = wholeHtmlCodeWithScript.replace(/<script[^>]*>([\s\S]*?)<\/script>/gi, '');
+    const wholeHtmlCodeWithoutStyleAndScript = wholeHtmlCodeWithoutScript.replace(/<style[^>]*>([\s\S]*?)<\/style>/gi, '');
+    const stripHTMLTags = str => str.replace(/<\/?[^>]+(>|$)/g, '');
+    const getPlainTextBox = stripHTMLTags(wholeHtmlCodeWithoutStyleAndScript);
+    return getPlainTextBox;
+    };
+    const plainText = removeTags();
+
+    
     const getPlainTextBox = removeTagsFromBox();
     console.log(getPlainTextBox);
         
